@@ -1,10 +1,8 @@
 <script lang="ts">
 	import type { ActionData, PageData } from './$types';
-	// import { onMount } from 'svelte';
 	import { enhance } from '$app/forms';
 
 	export let data: PageData;
-	// export let form: ActionData;
 
 	console.log('>>>> page start ');
 
@@ -12,37 +10,36 @@
 
 	function defaultButtonState(tutorial: any) {
 		if (tutorial.state == 0) {
-			return true
+			return true;
 		} else {
-			return false
+			return false;
 		}
 	}
 
 	function processButtonState(tutorial: any) {
 		if (tutorial.state == 1) {
-			return true
+			return true;
 		} else {
-			return false
+			return false;
 		}
 	}
 
 	function successButtonState(tutorial: any) {
 		if (tutorial.state == 2) {
-			return true
+			return true;
 		} else {
-			return false
+			return false;
 		}
 	}
 
 	async function editState(index: number) {
-		console.log('>>> New editState')
+		console.log('>>> New editState');
 		let tutorial = tutorials[index];
-		console.log('>>> state : ' + tutorial.state)
-		tutorial.state = tutorial.state > 1 ? 0 : (tutorial.state + 1);
-		console.log('>>> new : ' + tutorial.state)
-		tutorials[index] = tutorial
+		console.log('>>> state : ' + tutorial.state);
+		tutorial.state = tutorial.state > 1 ? 0 : tutorial.state + 1;
+		console.log('>>> new : ' + tutorial.state);
+		tutorials[index] = tutorial;
 	}
-	
 </script>
 
 <svelte:head>
@@ -53,11 +50,15 @@
 <section>
 	<div class="wrapper">
 		{#each tutorials as tutorial, index}
-			<form method="POST" action="?/editUser" use:enhance={()=> {
-				return async () => {
-					editState(index)
-				};
-			}} >
+			<form
+				method="POST"
+				action="?/editUser"
+				use:enhance={() => {
+					return async () => {
+						editState(index);
+					};
+				}}
+			>
 				<!-- <form method="POST" on:submit|preventDefault={()=>editState(index)}> -->
 				<input hidden name="id" type="text" value={tutorial._id} />
 				<input hidden name="title" type="text" value={tutorial.title} />
@@ -71,8 +72,7 @@
 					<div class="button__icon-wrapper">
 						<div class="button__icon" />
 					</div>
-					<div class="button__text-wrapper"
-					style='width: {tutorial.length}em'>
+					<div class="button__text-wrapper" style="width: {tutorial.length}em">
 						<div class="button__text button__text--default">{tutorial.title}</div>
 						<div class="button__text button__text--process">{tutorial.title}</div>
 						<div class="button__text button__text--success">{tutorial.title}</div>
