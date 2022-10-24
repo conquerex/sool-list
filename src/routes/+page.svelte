@@ -33,11 +33,8 @@
 	}
 
 	async function editState(index: number) {
-		console.log('>>> New editState');
 		let tutorial = tutorials[index];
-		console.log('>>> state : ' + tutorial.state);
 		tutorial.state = tutorial.state > 1 ? 0 : tutorial.state + 1;
-		console.log('>>> new : ' + tutorial.state);
 		tutorials[index] = tutorial;
 	}
 </script>
@@ -59,7 +56,6 @@
 					};
 				}}
 			>
-				<!-- <form method="POST" on:submit|preventDefault={()=>editState(index)}> -->
 				<input hidden name="id" type="text" value={tutorial._id} />
 				<input hidden name="title" type="text" value={tutorial.title} />
 				<input hidden name="state" type="number" value={tutorial.state} />
