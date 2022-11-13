@@ -22,7 +22,9 @@ body {
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
-	background-color: rgb(0, 121, 123);
+	padding-left: 2em;
+	padding-right: 2em;
+	background-color: rgb(40, 40, 40);
 }
 
 /* body {
@@ -125,7 +127,7 @@ button:focus:not(:focus-visible) {
 	font-size: 1.2em;
 	text-align: left;
 	padding: 0.8em 1.4em;
-	margin: 0.4em 0.4em;
+	margin: 0.7em 0.5em;
 	border-radius: 2em;
 	cursor: pointer;
 	font-family: "Montserrat", sans-serif;
@@ -139,7 +141,7 @@ button:focus:not(:focus-visible) {
 	outline: 0;
   }
   .button--default {
-	background-color: CORNFLOWERBLUE;
+	background-color: #11c888;
   }
   .button--default .button__text--default {
 	opacity: 1;
@@ -158,10 +160,11 @@ button:focus:not(:focus-visible) {
   }
   .button--process {
 	/* pointer-events: none; */
-	background-color: MEDIUMSLATEBLUE;
+	background-color: rgb(255, 255, 0);
   }
   .button--process .button__text--process {
 	opacity: 1;
+	color: black;
 	transform: translateY(0);
   }
   .button--process .button__text--default {
@@ -172,17 +175,18 @@ button:focus:not(:focus-visible) {
 	height: 1em;
 	margin: 0.2em 0.5em 0.2em 0;
 	border-radius: 100px;
-	border: 3px solid white;
+	border: 3px solid black;
 	animation: loading 1s infinite ease;
 	clip-path: polygon(100% 0, 50% 50%, 100% 100%);
 	-webkit-clip-path: polygon(100% 0, 50% 50%, 100% 100%);
   }
   .button--success {
 	/* pointer-events: none; */
-	background-color: DARKTURQUOISE;
+	background-color: rgb(83, 83, 83);
   }
   .button--success .button__text--success {
 	opacity: 1;
+	color: rgb(157, 157, 157);
 	transform: translateY(0);
   }
   .button--success .button__text--process {
@@ -193,8 +197,8 @@ button:focus:not(:focus-visible) {
 	height: 1.2em;
 	width: 0.9em;
 	border-radius: 0;
-	border-right: 3px solid white;
-	border-bottom: 3px solid white;
+	border-right: 3px solid rgb(157, 157, 157);
+	border-bottom: 3px solid rgb(157, 157, 157);
 	transform: rotate(405deg);
 	animation: reveal 500ms ease-in;
   }

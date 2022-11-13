@@ -20,10 +20,13 @@ export const load: PageServerLoad = async function () {
 
 	
 	data.forEach((item) => {
-		if (item.title.length > 14) {
+		if (item.title.length > 20) {
 			item.length = item.title.length * 0.7
-		} else {
+		} else if (item.title.length <= 20 && item.title.length > 14) {
+			console.log('14 :: ' + item.title)
 			item.length = item.title.length * 0.8
+		} else {
+			item.length = item.title.length * 0.85
 		}
 	})
 	
