@@ -19,6 +19,8 @@
 	.app {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-content: center;
 		min-height: 100vh;
 	}
 
@@ -30,7 +32,7 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		height: 100vh;
+		/* height: 100vh; */
 		/* max-width: 64rem; */
 		margin: 0 auto;
 		box-sizing: border-box;

@@ -22,6 +22,10 @@ body {
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
+	/* padding-top: 33em;
+	padding-bottom: 33em; */
+	/* margin-top: 22em;
+	margin-bottom: 22em; */
 	padding-left: 2em;
 	padding-right: 2em;
 	background-color: rgb(40, 40, 40);
@@ -141,7 +145,7 @@ button:focus:not(:focus-visible) {
 	outline: 0;
   }
   .button--default {
-	background-color: #11c888;
+	background-color: #32c693;
   }
   .button--default .button__text--default {
 	opacity: 1;
